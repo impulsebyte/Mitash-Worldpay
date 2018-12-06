@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <group id="worldpay" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Online Payments - Meetanshi</label>
+                <field id="mode" translate="label" sortOrder="6" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Sandbox Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="test_service_key" translate="label" sortOrder="7" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Test Service Key</label>
+                    <depends>
+                        <field id="mode">1</field>
+                    </depends>
+                </field>
+                <field id="test_client_key" translate="label" sortOrder="8" type="text" showInDefault="1"  showInWebsite="1" showInStore="1">
+                    <label>Test Client Key</label>
+                    <depends>
+                        <field id="mode">1</field>
+                    </depends>
+                </field>
+                <field id="live_service_key" translate="label" sortOrder="9" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Live Service Key</label>
+                    <depends>
+                        <field id="mode">0</field>
+                    </depends>
+                </field>
+                <field id="live_client_key" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Live Client Key</label>
+                    <depends>
+                        <field id="mode">0</field>
+                    </depends>
+                </field>
+                <field id="settlement_currency" translate="label" sortOrder="12" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Settlement Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                </field>
+                <field id="order_status" translate="label" sortOrder="13" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New order status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                </field>
+                <field id="description" translate="label" sortOrder="14" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Description</label>
+                </field>
+                <field id="mapping" translate="label comment tooltip" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sitecodes</label>
+                    <frontend_model>Meetanshi\Worldpay\Block\Adminhtml\Sitecode</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <tooltip>Map currency to site code, if you do not use site codes, Please leave it blank</tooltip>
+                </field>
+                <field id="shop_country_code" translate="label" sortOrder="12" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shop Country Code</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Country</source_model>
+                </field>
+                <field id="language_code" translate="label" sortOrder="14" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Language Code</label>
+                </field>
+            </group>
+
+            <group id="card" translate="label" sortOrder="200" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Cards</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="payment_action" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Action</label>
+                    <source_model>Meetanshi\Worldpay\Model\Source\PaymentAction</source_model>
+                </field>
+                <field id="storeonfile" translate="label" sortOrder="4" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Save Card Token</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="use3ds" translate="label" sortOrder="5" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use 3D Secure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="logging" translate="label" sortOrder="11" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="paypal4" translate="label" sortOrder="300" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay PayPal</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Paypal Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="alipay" translate="label" sortOrder="400" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Alipay</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Alipay Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="giropay" translate="label" sortOrder="500" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Giropay</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Giropay Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="ideal" translate="label" sortOrder="600" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay iDeal</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>iDeal Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="mistercash" translate="label" sortOrder="700" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Mistercash</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mistercash Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="przelewy24" translate="label" sortOrder="800" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Przelewy24</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Przelewy24 Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="paysafecard" translate="label" sortOrder="900" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay PaySafeCard</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PaySafeCard Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="postepay" translate="label" sortOrder="1000" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Postepay</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Postepay Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="qiwi" translate="label" sortOrder="1100" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Qiwi</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Qiwi Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="sofort" translate="label" sortOrder="1200" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Sofort</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sofort Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="yandex" translate="label" sortOrder="1300" type="text" showInDefault="1" showInWebsite="1">
+                <label>Worldpay Yandex</label>
+                <field id="active" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Yandex Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="2" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="logging" translate="label" sortOrder="3" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

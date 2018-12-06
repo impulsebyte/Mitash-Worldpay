@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
+    <methods>
+        <method name="card">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="paypal4">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="giropay">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="alipay">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="ideal">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="mistercash">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="przelewy24">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="paysafecard">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="postepay">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="qiwi">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="sofort">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="yandex">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+    </methods>
+</payment>

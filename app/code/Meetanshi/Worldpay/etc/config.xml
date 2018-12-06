@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <card>
+                <shop_country_code>GB</shop_country_code>
+                <active>0</active>
+                <payment_action>authorize_capture</payment_action>
+                <storeonfile>0</storeonfile>
+                <use3ds>0</use3ds>
+                <title>Worldpay Payments</title>
+                <logging>0</logging>
+                <order_status>processing</order_status>
+                <mode>1</mode>
+                <settlement_currency>GBP</settlement_currency>
+                <language_code>EN</language_code>
+                <can_create_order>1</can_create_order>
+                <model>Meetanshi\Worldpay\Model\Methods\Card</model>
+            </card>
+            <paypal4>
+                <active>0</active>
+                <title>Worldpay PayPal</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Paypal</model>
+            </paypal4>
+            <giropay>
+                <active>0</active>
+                <title>Worldpay Giropay</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Giropay</model>
+            </giropay>
+            <ideal>
+                <active>0</active>
+                <title>Worldpay iDeal</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Ideal</model>
+            </ideal>
+            <alipay>
+                <active>0</active>
+                <title>Worldpay Alipay</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Alipay</model>
+            </alipay>
+            <mistercash>
+                <active>0</active>
+                <title>Worldpay Mistercash</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Mistercash</model>
+            </mistercash>
+            <przelewy24>
+                <active>0</active>
+                <title>Worldpay Przelewy24</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Przelewy24</model>
+            </przelewy24>
+            <paysafecard>
+                <active>0</active>
+                <title>Worldpay PaySafeCard</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Paysafecard</model>
+            </paysafecard>
+            <postepay>
+                <active>0</active>
+                <title>Worldpay Postepay</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Postepay</model>
+            </postepay>
+            <qiwi>
+                <active>0</active>
+                <title>Worldpay Qiwi</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Qiwi</model>
+            </qiwi>
+            <sofort>
+                <active>0</active>
+                <title>Worldpay Sofort</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Sofort</model>
+            </sofort>
+            <yandex>
+                <active>0</active>
+                <title>Worldpay Yandex</title>
+                <logging>0</logging>
+                <model>Meetanshi\Worldpay\Model\Methods\Yandex</model>
+            </yandex>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,23 @@
+<?php
+$title = $block->escapeHtml($block->getMethod()->getTitle());
+?>
+
+<div class="order-payment-method-title"><?= /* @noEscape */
+    $title ?>
+    <?php if ($block->getInfo()->getAdditionalInformation()) : ?>
+    <table class="data-table admin__table-secondary">
+        <?php foreach ($block->getInfo()->getAdditionalInformation() as $label => $value) : ?>
+            <tr>
+                <?php if ($label != 'save_card' && $label != 'method_title') : ?>
+                    <th scope="row"><?= $block->getLabel($label) ?></th>
+                    <td>
+                        <?= /* @noEscape */
+                        nl2br($block->escapeHtml(implode("\n", $block->getValueAsArray($value, true)))) ?>
+                    </td>
+                <?php endif; ?>            </tr>
+
+        <?php endforeach; ?>
+    </table>
+</div>
+    <?php endif; ?>
+
